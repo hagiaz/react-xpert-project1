@@ -1,4 +1,3 @@
-// src/components/CommentForm.jsx
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { createComment } from '../states/comments/action';

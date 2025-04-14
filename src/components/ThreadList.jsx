@@ -8,7 +8,7 @@ import CategoryFilter from './CategoryFilter';
 function ThreadList() {
   const dispatch = useDispatch();
   const { threads, selectedCategory } = useSelector((state) => state.threads);
-  const users = useSelector((state) => state.users); // Ambil users dari store
+  const users = useSelector((state) => state.users);
   const { isLoading } = useSelector((state) => state.shared);
   
   useEffect(() => {

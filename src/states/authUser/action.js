@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-// src/states/auth/action.js
 import api from '../../services/api';
 import { setLoading } from '../shared/action';
 import { setAuthUser, setAuthError, logout } from './reducer';
@@ -21,10 +20,13 @@ export const loginUser = ({ email, password }) => async (dispatch) => {
   try {
     dispatch(setLoading(true));
     const response = await api.post('/login', { email, password });
-    const { token, user } = response.data.data;
+    const { token } = response.data.data;
+
     localStorage.setItem('token', token);
-    
-    dispatch(setAuthUser(user));
+    api.setAccessToken(token);
+
+    await dispatch(getUserProfile());
+
     return true;
   } catch (error) {
     dispatch(setAuthError(error.response?.data?.message || 'Login failed'));
@@ -33,6 +35,7 @@ export const loginUser = ({ email, password }) => async (dispatch) => {
     dispatch(setLoading(false));
   }
 };
+
 
 export const getUserProfile = () => async (dispatch) => {
   try {

@@ -66,6 +66,7 @@ img.avatar {
   padding: 0.5rem 1rem;
   border-radius: 6px;
   transition: background-color 0.3s;
+  text-align: center;
 }
 
 .navbar-item:hover {
@@ -197,7 +198,6 @@ img.avatar {
 }
 
 button {
-  width: 100%;
   padding: 1rem;
   background-color: #0077cc;
   color: white;
@@ -298,7 +298,8 @@ p a:hover {
   color: #777;
 }
 
-.thread-date, .thread-comments {
+.thread-date,
+.thread-comments {
   margin-right: 1rem;
 }
 
@@ -557,7 +558,7 @@ p a:hover {
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

@@ -4,6 +4,10 @@ const api = axios.create({
   baseURL: 'https://forum-api.dicoding.dev/v1',
 });
 
+api.setAccessToken = (token) => {
+  api.defaults.headers.common.Authorization = `Bearer ${token}`;
+};
+
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');

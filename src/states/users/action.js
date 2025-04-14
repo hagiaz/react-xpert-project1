@@ -1,4 +1,3 @@
-// src/states/users/action.js
 import api from '../../services/api';
 import { setUsers } from './reducer';
 import { setLoading } from '../shared/action';

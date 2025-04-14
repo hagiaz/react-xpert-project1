@@ -1,4 +1,3 @@
-// src/states/threads/reducer.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {

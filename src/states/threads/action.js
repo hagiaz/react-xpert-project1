@@ -1,4 +1,3 @@
-// src/states/threads/action.js
 import api from '../../services/api';
 import { setLoading } from '../shared/action';
 import { setThreads, setThreadDetail, addThread } from './reducer';

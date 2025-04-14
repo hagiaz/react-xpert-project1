@@ -1,4 +1,3 @@
-// src/components/CommentList.jsx
 import React from 'react';
 import CommentItem from './CommentItem';
 

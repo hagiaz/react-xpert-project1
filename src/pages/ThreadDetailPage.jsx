@@ -1,4 +1,3 @@
-// src/pages/ThreadDetailPage.jsx
 import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,11 +5,11 @@ import { fetchThreadDetail } from '../states/threads/action';
 import CommentList from '../components/CommentList';
 import CommentForm from '../components/CommentForm';
 import { formatDistanceToNow } from 'date-fns';
-import { id as idLocale } from 'date-fns/locale';  // Menggunakan idLocale untuk format tanggal
+import { id as idLocale } from 'date-fns/locale';
 import parse from 'html-react-parser';
 
 function ThreadDetailPage() {
-  const { id } = useParams();  // id ini untuk thread ID
+  const { id } = useParams();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { threadDetail } = useSelector((state) => state.threads);
@@ -18,8 +17,8 @@ function ThreadDetailPage() {
   const { isAuthenticated } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(fetchThreadDetail(id));  // Menggunakan id yang diambil dari useParams()
-  }, [id, dispatch]);  // Jangan lupa untuk menambahkan id di sini
+    dispatch(fetchThreadDetail(id));
+  }, [id, dispatch]);
 
   const handleBack = () => {
     navigate(-1);
@@ -60,7 +59,7 @@ function ThreadDetailPage() {
           <span className="thread-date">
             {formatDistanceToNow(new Date(threadDetail.createdAt), { 
               addSuffix: true,
-              locale: idLocale,  // Menggunakan idLocale untuk format tanggal
+              locale: idLocale,
             })}
           </span>
         </div>
@@ -74,7 +73,7 @@ function ThreadDetailPage() {
         <CommentList comments={threadDetail.comments} />
         
         {isAuthenticated ? (
-          <CommentForm threadId={id} /> // Mengirimkan id thread yang benar
+          <CommentForm threadId={id} />
         ) : (
           <div className="login-prompt">
             <p>Silakan <a href="/login">login</a> untuk menambahkan komentar</p>

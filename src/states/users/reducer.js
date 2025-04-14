@@ -1,4 +1,3 @@
-// src/states/users/reducer.js
 import { createSlice } from '@reduxjs/toolkit';
 
 const usersSlice = createSlice({
