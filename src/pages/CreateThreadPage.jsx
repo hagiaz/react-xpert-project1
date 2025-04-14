@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { createThread } from '../states/threads/action';
 
-export default function CreateThreadPage() {
+function CreateThreadPage() {
     
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -65,3 +65,5 @@ export default function CreateThreadPage() {
     </div>
   );
 }
+
+export default CreateThreadPage;
