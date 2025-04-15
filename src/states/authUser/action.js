@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import api from '../../services/api';
-import { setLoading } from '../shared/action';
-import { setAuthUser, setAuthError, logout } from './reducer';
+import {setLoading} from '../shared/action';
+import {setAuthUser, setAuthError, logout} from './reducer';
 
 export const registerUser = (userData) => async (dispatch) => {
   try {
@@ -16,11 +16,11 @@ export const registerUser = (userData) => async (dispatch) => {
   }
 };
 
-export const loginUser = ({ email, password }) => async (dispatch) => {
+export const loginUser = ({email, password}) => async (dispatch) => {
   try {
     dispatch(setLoading(true));
-    const response = await api.post('/login', { email, password });
-    const { token } = response.data.data;
+    const response = await api.post('/login', {email, password});
+    const {token} = response.data.data;
 
     localStorage.setItem('token', token);
     api.setAccessToken(token);

@@ -1,6 +1,6 @@
 import api from '../../services/api';
-import { setLoading } from '../shared/action';
-import { setThreads, setThreadDetail, addThread } from './reducer';
+import {setLoading} from '../shared/action';
+import {setThreads, setThreadDetail, addThread} from './reducer';
 
 export const fetchThreads = () => async (dispatch) => {
   try {
@@ -26,10 +26,10 @@ export const fetchThreadDetail = (threadId) => async (dispatch) => {
   }
 };
 
-export const createThread = ({ title, body, category = '' }) => async (dispatch) => {
+export const createThread = ({title, body, category = ''}) => async (dispatch) => {
   try {
     dispatch(setLoading(true));
-    const response = await api.post('/threads', { title, body, category });
+    const response = await api.post('/threads', {title, body, category});
     const newThread = response.data.data.thread;
     dispatch(addThread(newThread));
     return newThread.id;

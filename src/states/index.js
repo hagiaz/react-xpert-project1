@@ -1,4 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
+import {configureStore} from '@reduxjs/toolkit';
 import authReducer from './authUser/reducer';
 import threadsReducer from './threads/reducer';
 import commentsReducer from './comments/reducer';

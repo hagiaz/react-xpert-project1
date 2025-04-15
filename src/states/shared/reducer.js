@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   isLoading: false,
@@ -14,5 +14,5 @@ const sharedSlice = createSlice({
   },
 });
 
-export const { setLoading } = sharedSlice.actions;
+export const {setLoading} = sharedSlice.actions;
 export default sharedSlice.reducer;

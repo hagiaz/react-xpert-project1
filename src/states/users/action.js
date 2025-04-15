@@ -1,6 +1,6 @@
 import api from '../../services/api';
-import { setUsers } from './reducer';
-import { setLoading } from '../shared/action';
+import {setUsers} from './reducer';
+import {setLoading} from '../shared/action';
 
 export const fetchUsers = () => async (dispatch) => {
   try {

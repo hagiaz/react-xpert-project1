@@ -1,7 +1,7 @@
 import React from 'react';
 import CommentItem from './CommentItem';
 
-function CommentList({ comments }) {
+function CommentList({comments}) {
   return (
     <div className="comment-list">
       <h3>Komentar ({comments.length})</h3>

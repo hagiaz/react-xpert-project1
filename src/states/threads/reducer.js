@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   threads: [],
@@ -13,9 +13,9 @@ const threadsSlice = createSlice({
   reducers: {
     setThreads: (state, action) => {
       state.threads = action.payload;
-      
+
       const categories = new Set();
-      action.payload.forEach(thread => {
+      action.payload.forEach((thread) => {
         if (thread.category) {
           categories.add(thread.category);
         }
@@ -39,11 +39,11 @@ const threadsSlice = createSlice({
   },
 });
 
-export const { 
-  setThreads, 
-  setThreadDetail, 
-  setSelectedCategory, 
-  addThread, 
-  addComment 
+export const {
+  setThreads,
+  setThreadDetail,
+  setSelectedCategory,
+  addThread,
+  addComment,
 } = threadsSlice.actions;
 export default threadsSlice.reducer;

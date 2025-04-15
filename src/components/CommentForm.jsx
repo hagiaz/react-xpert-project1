@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { createComment } from '../states/comments/action';
+import React, {useState} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {createComment} from '../states/comments/action';
 
-function CommentForm({ threadId }) {
+function CommentForm({threadId}) {
   const [content, setContent] = useState('');
   const dispatch = useDispatch();
-  const { isLoading } = useSelector((state) => state.shared);
+  const {isLoading} = useSelector((state) => state.shared);
 
   const handleSubmit = async (e) => {
     e.preventDefault();

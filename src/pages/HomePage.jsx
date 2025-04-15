@@ -1,11 +1,11 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import {useSelector} from 'react-redux';
+import {Link} from 'react-router-dom';
 import ThreadList from '../components/ThreadList';
 
 function HomePage() {
-  const { isAuthenticated } = useSelector((state) => state.auth);
-  
+  const {isAuthenticated} = useSelector((state) => state.auth);
+
   return (
     <div className="home-page">
       <div className="page-header">

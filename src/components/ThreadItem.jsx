@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { formatDistanceToNow } from 'date-fns';
-import { id } from 'date-fns/locale';
+import {Link} from 'react-router-dom';
+import {formatDistanceToNow} from 'date-fns';
+import {id} from 'date-fns/locale';
 import parse from 'html-react-parser';
 
-function ThreadItem({ thread, owner }) {
+function ThreadItem({thread, owner}) {
   const truncateBody = (html) => {
     const parsed = parse(html);
     let text = '';
@@ -35,14 +35,14 @@ function ThreadItem({ thread, owner }) {
               src={owner.avatar}
               alt={owner.name}
               className="avatar"
-              style={{ width: '24px', height: '24px', borderRadius: '50%', marginRight: '8px' }}
+              style={{width: '24px', height: '24px', borderRadius: '50%', marginRight: '8px'}}
             />
           )}
           <span>By {owner?.name || thread.ownerId}</span>
         </div>
         <div className="thread-details">
           <span className="thread-date">
-            {formatDistanceToNow(new Date(thread.createdAt), { 
+            {formatDistanceToNow(new Date(thread.createdAt), {
               addSuffix: true,
               locale: id,
             })}

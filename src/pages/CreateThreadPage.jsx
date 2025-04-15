@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { createThread } from '../states/threads/action';
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {useNavigate} from 'react-router-dom';
+import {createThread} from '../states/threads/action';
 
 function CreateThreadPage() {
-    
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -15,7 +14,7 @@ function CreateThreadPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const newThreadId = await dispatch(createThread({ title, body, category }));
+    const newThreadId = await dispatch(createThread({title, body, category}));
 
     if (newThreadId) {
       navigate(`/threads/${newThreadId}`);

@@ -1,9 +1,9 @@
 import React from 'react';
-import { formatDistanceToNow } from 'date-fns';
-import { id } from 'date-fns/locale';
+import {formatDistanceToNow} from 'date-fns';
+import {id} from 'date-fns/locale';
 import parse from 'html-react-parser';
 
-function CommentItem({ comment }) {
+function CommentItem({comment}) {
   return (
     <div className="comment-item">
       <div className="comment-header">
@@ -14,9 +14,9 @@ function CommentItem({ comment }) {
           <span className="owner-name">{comment.owner.name}</span>
         </div>
         <span className="comment-date">
-          {formatDistanceToNow(new Date(comment.createdAt), { 
+          {formatDistanceToNow(new Date(comment.createdAt), {
             addSuffix: true,
-            locale: id 
+            locale: id,
           })}
         </span>
       </div>

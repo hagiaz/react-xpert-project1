@@ -1,24 +1,24 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchThreads } from '../states/threads/action';
-import { fetchUsers } from '../states/users/action';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import {fetchThreads} from '../states/threads/action';
+import {fetchUsers} from '../states/users/action';
 import ThreadItem from './ThreadItem';
 import CategoryFilter from './CategoryFilter';
 
 function ThreadList() {
   const dispatch = useDispatch();
-  const { threads, selectedCategory } = useSelector((state) => state.threads);
+  const {threads, selectedCategory} = useSelector((state) => state.threads);
   const users = useSelector((state) => state.users);
-  const { isLoading } = useSelector((state) => state.shared);
-  
+  const {isLoading} = useSelector((state) => state.shared);
+
   useEffect(() => {
     dispatch(fetchThreads());
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  const filteredThreads = selectedCategory
-    ? threads.filter(thread => thread.category === selectedCategory)
-    : threads;
+  const filteredThreads = selectedCategory ?
+    threads.filter((thread) => thread.category === selectedCategory) :
+    threads;
 
   const getOwnerInfo = (ownerId) => {
     return users.find((user) => user.id === ownerId);
@@ -41,9 +41,9 @@ function ThreadList() {
           })
         ) : (
           <div className="no-threads">
-            {selectedCategory 
-              ? `Tidak ada thread dengan kategori ${selectedCategory}` 
-              : 'Tidak ada thread tersedia'}
+            {selectedCategory ?
+              `Tidak ada thread dengan kategori ${selectedCategory}` :
+              'Tidak ada thread tersedia'}
           </div>
         )}
       </div>

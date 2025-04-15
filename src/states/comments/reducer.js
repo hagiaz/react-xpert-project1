@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
-  comments: []
+  comments: [],
 };
 
 const commentsSlice = createSlice({
@@ -10,9 +10,9 @@ const commentsSlice = createSlice({
   reducers: {
     addComment: (state, action) => {
       state.comments.push(action.payload);
-    }
-  }
+    },
+  },
 });
 
-export const { addComment } = commentsSlice.actions;
+export const {addComment} = commentsSlice.actions;
 export default commentsSlice.reducer;
