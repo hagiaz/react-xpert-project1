@@ -93,6 +93,7 @@ img.avatar {
 .category-list {
   display: flex;
   gap: 1rem;
+  overflow: scroll;
 }
 
 .category-item {
@@ -571,10 +572,6 @@ p a:hover {
 
   .thread-item {
     padding: 1rem;
-  }
-
-  .category-list {
-    overflow: scroll;
   }
 
   .thread-category {

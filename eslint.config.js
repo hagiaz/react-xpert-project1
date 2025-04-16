@@ -10,7 +10,6 @@ const compat = new FlatCompat();
 export default [
   {ignores: ['dist']},
 
-  // 🔁 Use Google style config (converted from .eslintrc to flat config)
   ...compat.extends('google'),
 
   {
